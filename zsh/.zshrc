@@ -81,7 +81,11 @@ zinit cdreplay -q
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+# Bind Home to beginning-of-line
+bindkey "^[[H" beginning-of-line
 
+# Bind End to end-of-line
+bindkey "^[[F" end-of-line
 #
 # History
 HISTZIZE=500000
