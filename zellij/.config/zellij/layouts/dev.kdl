@@ -1,0 +1,68 @@
+
+layout name="Toolkit (NeMo Guardrails)" {
+    tab name="Toolkit (NeMo Guardrails)" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            pane name="Neovim" {
+                edit "."
+                cwd "~/git/NeMo-Guardrails/"
+                size "80%"
+            }
+            pane split_direction="vertical" {
+                pane name="Ipython" {
+                    command "poetry"
+                    args "run" "ipython"
+                    cwd "~/git/NeMo-Guardrails/"
+                    start_suspended true
+                    size "60%"
+                }
+                pane name="Pytest" {
+                    command "poetry"
+                    args "run" "pytest" "tests"
+                    cwd "~/git/NeMo-Guardrails/"
+                    start_suspended true
+                }
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Microservice (NMP)" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="horizontal" {
+            pane name="Neovim" {
+                edit "."
+                cwd "~/git/nmp/services/guardrails"
+                size "80%"
+            }
+            pane split_direction="vertical" {
+                pane name="Server" {
+                    command "sh"
+                    args "run_dev.sh"
+                    cwd "~/git/nmp/services/guardrails"
+                    start_suspended true
+                    size "50%"
+                }
+                pane name="Client (CURL)" {
+                    cwd "~/git/nmp/services/guardrails"
+                    size "40%"
+                }
+                pane name="Pytest" {
+                    command "uv"
+                    args "run" "pytest" "tests"
+                    cwd "~/git/nmp/services/guardrails"
+                    start_suspended true
+                }
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
+
