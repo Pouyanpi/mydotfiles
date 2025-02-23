@@ -19,6 +19,13 @@ layout name="Toolkit (NeMo Guardrails)" {
                     size "60%"
                 }
 
+                pane name="LazyGit" {
+                    command "lazygit"
+                    cwd "~/git/NeMo-Guardrails/"
+                    start_suspended true
+                    size "25%"
+                }
+
                 pane name="Pytest" {
                     command "poetry"
                     args "run" "pytest" "tests"
