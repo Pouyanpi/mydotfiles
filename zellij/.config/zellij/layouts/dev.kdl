@@ -6,7 +6,7 @@ layout name="Toolkit (NeMo Guardrails)" {
         }
         pane split_direction="horizontal" {
             pane name="Neovim" {
-                edit "."
+                command "nvim"
                 cwd "~/git/NeMo-Guardrails/"
                 size "80%"
             }
